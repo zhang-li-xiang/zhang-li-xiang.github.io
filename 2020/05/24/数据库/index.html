@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="数据库的创建1CREATE DATABASE 数据库名称">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据库">
+<meta property="og:url" content="http://yoursite.com/2020/05/24/%E6%95%B0%E6%8D%AE%E5%BA%93/index.html">
+<meta property="og:site_name" content="SunnyBoy">
+<meta property="og:description" content="数据库的创建1CREATE DATABASE 数据库名称">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-05-24T06:24:05.528Z">
+<meta property="article:modified_time" content="2020-05-24T07:47:39.935Z">
+<meta property="article:author" content="SunnyBoy">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://yoursite.com/2020/05/24/%E6%95%B0%E6%8D%AE%E5%BA%93/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>数据库 | SunnyBoy</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">SunnyBoy</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">追随阳光</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/24/%E6%95%B0%E6%8D%AE%E5%BA%93/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="SunnyBoy">
+      <meta itemprop="description" content="学习">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="SunnyBoy">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          数据库
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-05-24 14:24:05 / 修改时间：15:47:39" itemprop="dateCreated datePublished" datetime="2020-05-24T14:24:05+08:00">2020-05-24</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h3 id="数据库的创建"><a href="#数据库的创建" class="headerlink" title="数据库的创建"></a>数据库的创建</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">DATABASE</span> 数据库名称</span><br></pre></td></tr></table></figure>
+
+<a id="more"></a>
+
+<h3 id="表的创建"><a href="#表的创建" class="headerlink" title="表的创建"></a>表的创建</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> 表名称</span><br><span class="line">(</span><br><span class="line"><span class="comment">-- not null 设置非空</span></span><br><span class="line">列名称<span class="number">1</span> 数据类型 <span class="keyword">not</span> <span class="literal">null</span>,</span><br><span class="line">列名称<span class="number">2</span> 数据类型,</span><br><span class="line">.......</span><br><span class="line"><span class="comment">--设置主键</span></span><br><span class="line"><span class="keyword">constraint</span> PK_Reader_ID primary <span class="keyword">key</span> (Reader_id)</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+<h3 id="设置约束"><a href="#设置约束" class="headerlink" title="设置约束"></a>设置约束</h3><h4 id="1-设置外键约束"><a href="#1-设置外键约束" class="headerlink" title="1.设置外键约束"></a>1.设置外键约束</h4><p> <strong>alter table 表A add constraint FK_B(外键缩写FK_…) foreign key (列名) references 表B(列名)</strong> </p>
+<p>示例：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> Readers</span><br><span class="line"><span class="keyword">add</span> <span class="keyword">foreign</span> <span class="keyword">key</span>(Type_id) <span class="keyword">references</span> ReadersType(Type_id)</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-设置默认约束"><a href="#2-设置默认约束" class="headerlink" title="2.设置默认约束"></a>2.设置默认约束</h4><p> <strong>alter table 表名 add constraint 约束名  default 默认值 for 列名</strong></p>
+<p>示例：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> Readers</span><br><span class="line"><span class="keyword">add</span> <span class="keyword">constraint</span> df_Type_id <span class="keyword">default</span> <span class="number">2</span> <span class="keyword">for</span> Type_id</span><br></pre></td></tr></table></figure>
+
+<h4 id="3-设置字段值的条件约束"><a href="#3-设置字段值的条件约束" class="headerlink" title="3.设置字段值的条件约束"></a>3.设置字段值的条件约束</h4><p> <strong>alter table 表名 add 字段名 数据类型 constraint 约束名 check(约束条件)</strong></p>
+<p>示例：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> Books</span><br><span class="line"><span class="keyword">add</span> BookNum <span class="built_in">Tinyint</span> <span class="keyword">constraint</span> CK_BookNum <span class="keyword">check</span>(BookNum&gt;=<span class="number">0</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="插入数据"><a href="#插入数据" class="headerlink" title="插入数据"></a>插入数据</h3><h4 id="1-插入全部字段名的值"><a href="#1-插入全部字段名的值" class="headerlink" title="1.插入全部字段名的值"></a>1.插入全部字段名的值</h4><p><strong>insert into 表名 values(数据,数据,数据,…..)</strong></p>
+<p>示例：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> Readers <span class="keyword">values</span> (<span class="number">2013010010</span>,<span class="string">'张会悦'</span>,<span class="number">2</span>,<span class="string">'医学系'</span>,<span class="literal">null</span>,<span class="string">'女'</span>,<span class="string">'1994-02-20'</span>)</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-插入部分数据"><a href="#2-插入部分数据" class="headerlink" title="2.插入部分数据"></a>2.插入部分数据</h4><p><strong>insert into 表明 (列名,列名,..) values (数据,数据,…)</strong></p>
+<p>示例：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> stuinfo(<span class="keyword">sid</span>,sname,sclass) <span class="keyword">values</span> (<span class="number">3</span>,<span class="string">'码仙3'</span>,<span class="number">1003</span>);</span><br></pre></td></tr></table></figure>
+
+<h4 id="3-插入多条数据"><a href="#3-插入多条数据" class="headerlink" title="3.插入多条数据"></a>3.插入多条数据</h4><p><strong>insert into  表名(列名,列名…) values (列值,列值,..),(列值,列值,..),(列值,列值,…),….</strong></p>
+<p>示例：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> </span><br><span class="line"></span><br><span class="line">items(<span class="keyword">name</span>,city,price,<span class="built_in">number</span>,picture) </span><br><span class="line"></span><br><span class="line"><span class="keyword">VALUES</span></span><br><span class="line"></span><br><span class="line">(<span class="string">'耐克运动鞋'</span>,<span class="string">'广州'</span>,<span class="number">500</span>,<span class="number">1000</span>,<span class="string">'003.jpg'</span>),</span><br><span class="line"></span><br><span class="line">(<span class="string">'耐克运动鞋2'</span>,<span class="string">'广州2'</span>,<span class="number">500</span>,<span class="number">1000</span>,<span class="string">'002.jpg'</span>);</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="修改值"><a href="#修改值" class="headerlink" title="修改值"></a>修改值</h3><p><strong>update 表名 set 列名=新的字面值 where 条件</strong></p>
+<p><strong>注意：不添加条件会更改该列的全部值</strong></p>
+<p>示例：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">update</span> ReadersType <span class="keyword">set</span> BorrowTerm=<span class="number">45</span> <span class="keyword">where</span> Type_Name=<span class="string">'其他'</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="删除数据"><a href="#删除数据" class="headerlink" title="删除数据"></a>删除数据</h4><p><strong>delete from 表名 where 条件</strong></p>
+<p><strong>注意：不添加条件会删除整张表</strong></p>
+<p>示例：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">delete</span> <span class="keyword">from</span> Books <span class="keyword">where</span> Author=<span class="string">'高玉祥'</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="查询数据"><a href="#查询数据" class="headerlink" title="查询数据"></a>查询数据</h3><h4 id="1-查询全张表数据"><a href="#1-查询全张表数据" class="headerlink" title="1.查询全张表数据"></a>1.查询全张表数据</h4><blockquote>
+<p>select * from 表名</p>
+</blockquote>
+<h4 id="2-查询全表指定条件的数据"><a href="#2-查询全表指定条件的数据" class="headerlink" title="2.查询全表指定条件的数据"></a>2.查询全表指定条件的数据</h4><p><strong>select * from 表名 where 条件</strong></p>
+<p>示例：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> Readers <span class="keyword">where</span> Reader_id=<span class="number">20088702</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="3-查询显示指定列满足指定条件的数据"><a href="#3-查询显示指定列满足指定条件的数据" class="headerlink" title="3.查询显示指定列满足指定条件的数据"></a>3.查询显示指定列满足指定条件的数据</h4><p><strong>select 列名，列名,… from 表名 where 条件</strong></p>
+<p>示例：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> Book_Name,Author,publishedDate,price <span class="keyword">from</span> Books <span class="keyword">where</span> publisher=<span class="string">'清华大学出版社'</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="4-模糊查询"><a href="#4-模糊查询" class="headerlink" title="4.模糊查询"></a>4.模糊查询</h4><p><strong>select * from 表名 where 列名 like 数据</strong></p>
+<p>示例：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> Books <span class="keyword">where</span> BooK_Name <span class="keyword">like</span> <span class="string">'%数据库%'</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="5-查询数据并排序"><a href="#5-查询数据并排序" class="headerlink" title="5.查询数据并排序"></a>5.查询数据并排序</h4><p><strong>desc:降序</strong></p>
+<p><strong>asc:升序</strong></p>
+<p><strong>select * from 表名 order by 列名 desc</strong></p>
+<p>示例：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> Books <span class="keyword">order</span> <span class="keyword">by</span> PublishedDate <span class="keyword">desc</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>select * from 表名 order by 列名 asc(不写默认升序)</strong></p>
+<p>示例：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> Books <span class="keyword">order</span> <span class="keyword">by</span> PublishedDate <span class="keyword">asc</span></span><br><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> Books <span class="keyword">order</span> <span class="keyword">by</span> PublishedDate</span><br></pre></td></tr></table></figure>
+
+<h4 id="6-查询并显示前n行数据"><a href="#6-查询并显示前n行数据" class="headerlink" title="6.查询并显示前n行数据"></a>6.查询并显示前n行数据</h4><p><strong>select top n * from 表名 order by 列名 desc</strong></p>
+<p>示例：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">--查询降序，并显示前三行数据</span></span><br><span class="line"><span class="keyword">select</span> top <span class="number">3</span> * <span class="keyword">from</span> Books <span class="keyword">order</span> <span class="keyword">by</span> PublishedDate <span class="keyword">desc</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="7-查询并更改列名显示"><a href="#7-查询并更改列名显示" class="headerlink" title="7.查询并更改列名显示"></a>7.查询并更改列名显示</h4><p><strong>as 或者 空格 或者 =</strong></p>
+<p><strong>select 列名 as 新列名,列名 as 新列名,…… from 表名</strong> </p>
+<p>示例：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span>  BookNum <span class="keyword">as</span> <span class="string">'图书总量'</span> <span class="keyword">from</span> Books</span><br></pre></td></tr></table></figure>
+
+<h4 id="8-将查询的数据存入新表中"><a href="#8-将查询的数据存入新表中" class="headerlink" title="8.将查询的数据存入新表中"></a>8.将查询的数据存入新表中</h4><h5 id="1-表不存在"><a href="#1-表不存在" class="headerlink" title="1.表不存在"></a>1.表不存在</h5><p><strong>select * into 新表名 from 表名 where 条件</strong></p>
+<p>示例：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> * <span class="keyword">into</span> bookstsinghua  <span class="keyword">from</span> Books <span class="keyword">where</span>  publisher=<span class="string">'清华大学出版社'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">select</span> (字段<span class="number">1</span>，字段<span class="number">2</span>，...) <span class="keyword">into</span> b <span class="keyword">from</span> a</span><br></pre></td></tr></table></figure>
+
+<h5 id="2-表存在"><a href="#2-表存在" class="headerlink" title="2.表存在"></a>2.表存在</h5><p>如果两表字段相同</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">--b表存在（两表结构一样） </span></span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> b <span class="keyword">select</span> * <span class="keyword">from</span> a</span><br></pre></td></tr></table></figure>
+
+<p>若两表只是有部分（字段）相同，则 </p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> b(col1,col2,col3,col4,...) <span class="keyword">select</span> col1,col2,col3,col4,... <span class="keyword">from</span> a where...</span><br></pre></td></tr></table></figure>
+
+<h4 id="9-sum函数"><a href="#9-sum函数" class="headerlink" title="9.sum函数"></a>9.sum函数</h4><p>sum(列名或者数据)  求和函数</p>
+<p>将某张表的某列不同数据统计并显示</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">--将Readers表中的Department列不同系部的读者人数显示</span></span><br><span class="line"><span class="keyword">select</span> Department <span class="keyword">as</span> 系部,<span class="keyword">sum</span>(<span class="number">1</span>) <span class="keyword">as</span> <span class="string">'读者人数'</span> <span class="keyword">from</span> Readers <span class="keyword">group</span> <span class="keyword">by</span> Department</span><br><span class="line"></span><br><span class="line"><span class="comment">--查询每年借出的图书数量。（按year(BorrowDate)分类）</span></span><br><span class="line"><span class="keyword">select</span> <span class="keyword">datepart</span>(yyyy,BorrowDate) <span class="keyword">as</span> <span class="string">'年份'</span>,<span class="keyword">sum</span>(<span class="number">1</span>) <span class="keyword">as</span> <span class="string">'图书数量'</span> <span class="keyword">from</span> Borrow <span class="keyword">group</span> <span class="keyword">by</span> <span class="keyword">datepart</span>(yyyy,BorrowDate)</span><br></pre></td></tr></table></figure>
+
+<h4 id="10-group-by"><a href="#10-group-by" class="headerlink" title="10.group by"></a>10.group by</h4><p>GROUP BY 语句用于结合合计函数，根据一个或多个列对结果集进行分组。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> column_name, aggregate_function(column_name)</span><br><span class="line"><span class="keyword">FROM</span> table_name</span><br><span class="line"><span class="keyword">WHERE</span> column_name <span class="keyword">operator</span> <span class="keyword">value</span></span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> column_name</span><br></pre></td></tr></table></figure>
+
+<h4 id="11-跨表查询"><a href="#11-跨表查询" class="headerlink" title="11.跨表查询"></a>11.跨表查询</h4><p>同一数据库</p>
+<p>方法1：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">---Books,Borrow,Readers 三张表 Borrow.Book_Id=Books.Book_id and Borrow.Reader_Id=Readers.Reader_id 为主外键</span></span><br><span class="line"><span class="keyword">select</span> Books.BooK_Name <span class="keyword">as</span> <span class="string">'图书名称'</span>,Books.Author <span class="keyword">as</span> <span class="string">'作者'</span>,Books.PublishedDate <span class="keyword">as</span> <span class="string">'出版日期'</span>,Readers.Reader_id <span class="keyword">as</span> <span class="string">'读者编号'</span>,Borrow.BorrowDate <span class="keyword">as</span> <span class="string">'借阅日期'</span>,Borrow.ReturnDate <span class="keyword">as</span> <span class="string">'归还日期'</span> </span><br><span class="line"><span class="keyword">from</span> Books,Readers,Borrow <span class="keyword">where</span> Author=<span class="string">'李志鸿'</span> <span class="keyword">and</span></span><br><span class="line">Borrow.Book_Id=Books.Book_id <span class="keyword">and</span> Borrow.Reader_Id=Readers.Reader_id</span><br></pre></td></tr></table></figure>
+
+<p>方法2：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">--使用join关键字连接两张表 一对多</span></span><br><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> student </span><br><span class="line"><span class="keyword">INNER</span> <span class="keyword">JOIN</span> <span class="keyword">class</span> <span class="keyword">on</span> student.stu_classes = class.id <span class="keyword">AND</span> class.class_name = <span class="string">'1804'</span></span><br><span class="line"></span><br><span class="line"><span class="comment">--使用join关键字连接两张表加中间表 多对多</span></span><br><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> teacher  </span><br><span class="line"><span class="keyword">INNER</span> <span class="keyword">JOIN</span> cla_teacher <span class="keyword">ON</span> cla_teacher.teacher_id = teacher.id </span><br><span class="line"><span class="keyword">INNER</span> <span class="keyword">JOIN</span> <span class="keyword">class</span> <span class="keyword">ON</span> class.id = cla_teacher.class_id <span class="keyword">and</span> class.class_name = <span class="string">'1804'</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="12-UNION-和-UNION-ALL-操作符"><a href="#12-UNION-和-UNION-ALL-操作符" class="headerlink" title="12.UNION 和 UNION ALL 操作符"></a>12.UNION 和 UNION ALL 操作符</h4><p>UNION 操作符用于合并两个或多个 SELECT 语句的结果集。</p>
+<p>请注意，UNION 内部的 SELECT 语句必须拥有相同数量的列。列也必须拥有相似的数据类型。同时，每条 SELECT 语句中的列的顺序必须相同。</p>
+<p><strong>注释：</strong>默认地，UNION 操作符选取不同的值。如果允许重复的值，请使用 UNION ALL。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> column_name(s) <span class="keyword">FROM</span> table_name1</span><br><span class="line"><span class="keyword">UNION</span></span><br><span class="line"><span class="keyword">SELECT</span> column_name(s) <span class="keyword">FROM</span> table_name2</span><br><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span> column_name(s) <span class="keyword">FROM</span> table_name1</span><br><span class="line"><span class="keyword">UNION</span> <span class="keyword">ALL</span></span><br><span class="line"><span class="keyword">SELECT</span> column_name(s) <span class="keyword">FROM</span> table_name2</span><br></pre></td></tr></table></figure>
+
+<p>另外，UNION 结果集中的列名总是等于 UNION 中第一个 SELECT 语句中的列名。</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#数据库的创建"><span class="nav-number">1.</span> <span class="nav-text">数据库的创建</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#表的创建"><span class="nav-number">2.</span> <span class="nav-text">表的创建</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设置约束"><span class="nav-number">3.</span> <span class="nav-text">设置约束</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-设置外键约束"><span class="nav-number">3.1.</span> <span class="nav-text">1.设置外键约束</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-设置默认约束"><span class="nav-number">3.2.</span> <span class="nav-text">2.设置默认约束</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-设置字段值的条件约束"><span class="nav-number">3.3.</span> <span class="nav-text">3.设置字段值的条件约束</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#插入数据"><span class="nav-number">4.</span> <span class="nav-text">插入数据</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-插入全部字段名的值"><span class="nav-number">4.1.</span> <span class="nav-text">1.插入全部字段名的值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-插入部分数据"><span class="nav-number">4.2.</span> <span class="nav-text">2.插入部分数据</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-插入多条数据"><span class="nav-number">4.3.</span> <span class="nav-text">3.插入多条数据</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改值"><span class="nav-number">5.</span> <span class="nav-text">修改值</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#删除数据"><span class="nav-number">5.1.</span> <span class="nav-text">删除数据</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查询数据"><span class="nav-number">6.</span> <span class="nav-text">查询数据</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-查询全张表数据"><span class="nav-number">6.1.</span> <span class="nav-text">1.查询全张表数据</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-查询全表指定条件的数据"><span class="nav-number">6.2.</span> <span class="nav-text">2.查询全表指定条件的数据</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-查询显示指定列满足指定条件的数据"><span class="nav-number">6.3.</span> <span class="nav-text">3.查询显示指定列满足指定条件的数据</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-模糊查询"><span class="nav-number">6.4.</span> <span class="nav-text">4.模糊查询</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-查询数据并排序"><span class="nav-number">6.5.</span> <span class="nav-text">5.查询数据并排序</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-查询并显示前n行数据"><span class="nav-number">6.6.</span> <span class="nav-text">6.查询并显示前n行数据</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7-查询并更改列名显示"><span class="nav-number">6.7.</span> <span class="nav-text">7.查询并更改列名显示</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#8-将查询的数据存入新表中"><span class="nav-number">6.8.</span> <span class="nav-text">8.将查询的数据存入新表中</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-表不存在"><span class="nav-number">6.8.1.</span> <span class="nav-text">1.表不存在</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-表存在"><span class="nav-number">6.8.2.</span> <span class="nav-text">2.表存在</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#9-sum函数"><span class="nav-number">6.9.</span> <span class="nav-text">9.sum函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#10-group-by"><span class="nav-number">6.10.</span> <span class="nav-text">10.group by</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#11-跨表查询"><span class="nav-number">6.11.</span> <span class="nav-text">11.跨表查询</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#12-UNION-和-UNION-ALL-操作符"><span class="nav-number">6.12.</span> <span class="nav-text">12.UNION 和 UNION ALL 操作符</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">SunnyBoy</p>
+  <div class="site-description" itemprop="description">学习</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">1</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">SunnyBoy</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://mist.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
