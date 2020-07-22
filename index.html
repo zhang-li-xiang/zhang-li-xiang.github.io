@@ -172,7 +172,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2020/07/22/Ubuntu%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4/" class="post-title-link" itemprop="url">Ubuntu基础命令</a>
+            <a href="/2020/07/22/Ubuntu%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4/" class="post-title-link" itemprop="url">Ubuntu基本命令</a>
         </h2>
 
         <div class="post-meta">
@@ -183,7 +183,16 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2020-07-22 16:53:46 / 修改时间：16:48:59" itemprop="dateCreated datePublished" datetime="2020-07-22T16:53:46+08:00">2020-07-22</time>
+              <time title="创建时间：2020-07-22 16:53:46 / 修改时间：17:16:47" itemprop="dateCreated datePublished" datetime="2020-07-22T16:53:46+08:00">2020-07-22</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Ubuntu/" itemprop="url" rel="index"><span itemprop="name">Ubuntu</span></a>
+                </span>
             </span>
 
           
@@ -197,102 +206,15 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h3 id="1-基础bash命令"><a href="#1-基础bash命令" class="headerlink" title="1.基础bash命令"></a>1.基础bash命令</h3><p>查看历史命令记录</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">history</span></span><br></pre></td></tr></table></figure>
-
-<p>查看时间</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">date</span><br></pre></td></tr></table></figure>
-
-<p>目录进入</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> 路径</span><br></pre></td></tr></table></figure>
-
-<p>查看目录结构</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ls </span><br><span class="line">ls -a  --全部文件</span><br><span class="line">ls -l  --详细信息</span><br><span class="line">ls -la --全部文件详细信息</span><br></pre></td></tr></table></figure>
-
-<h4 id="1-1文件目录操作"><a href="#1-1文件目录操作" class="headerlink" title="1.1文件目录操作"></a>1.1文件目录操作</h4><p><strong>tree</strong>    –以树状机构查看目录及文件</p>
-<p>白色：普通文件</p>
-<p>蓝色：目录</p>
-<p>绿色：可执行文件</p>
-<p>红色：压缩包</p>
-<p>青色：链接文件（快捷方式）</p>
-<p>黄色：设备文件</p>
-<p>灰色：其他文件</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tree</span><br></pre></td></tr></table></figure>
-
-<p>注意：需要联网安装该软件</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install tree</span><br></pre></td></tr></table></figure>
-
-<p><strong>mkdir</strong>  创建目录</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mkdir 目录名称</span><br><span class="line">mkdir aa/bb/cc -p --创建多层目录</span><br></pre></td></tr></table></figure>
-
-<p>rmdir    删除空目录（不常用）</p>
-<p><strong>rm</strong>  删除</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">rm 目录名称 -r --添加参数-i可以加提示</span><br><span class="line">rm 文件名</span><br></pre></td></tr></table></figure>
-
-<p><strong>touch</strong>  创建文件</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">touch 文件名.后缀名 --后缀名可省略</span><br></pre></td></tr></table></figure>
-
-<p><strong>cat/more/less</strong> 查看文件（还有head和tail命令也可以查看文件不做解释）</p>
-<p>cat 一般查看小型文件</p>
-<p>more 一般查看大型文件 （回车一行一行的切换，空格键翻页）</p>
-<p>less 查看可返回</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cat 文件名</span><br><span class="line">more 文件名</span><br><span class="line">less 文件名</span><br></pre></td></tr></table></figure>
-
-<p><strong>cp</strong>  复制文件</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cp 源文件 目标文件 --存在有内容会覆盖</span><br><span class="line">cp 源目录 目标目录 -r --存在放在目录下，不存在新建目录</span><br></pre></td></tr></table></figure>
-
-<p><strong>mv</strong>  修改文件名/目录名或者移动文件</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mv 源文件名 修改文件名</span><br><span class="line">mv 源文件 移动路径</span><br></pre></td></tr></table></figure>
-
-<p><strong>which</strong>  查找命令位置</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">which</span> 命令(ls/cp等)</span><br></pre></td></tr></table></figure>
-
-<h4 id="1-2修改文件权限"><a href="#1-2修改文件权限" class="headerlink" title="1.2修改文件权限"></a>1.2修改文件权限</h4><p><strong>chmod</strong> </p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod [who] [+|-|=] [mode]</span><br></pre></td></tr></table></figure>
-
-<p>文件所有者：u</p>
-<p>文件所有组：g</p>
-<p>其他人： o</p>
-<p>所有人：a（who不写默认a）</p>
-<p>+：添加权限</p>
-<p>-：减少权限</p>
-<p>=：覆盖权限</p>
-<p>mode：r：读、w：写、x：执行</p>
-<p>或者数组设定 r：4、w：2、x：1</p>
-<h4 id="1-3文件查找"><a href="#1-3文件查找" class="headerlink" title="1.3文件查找"></a>1.3文件查找</h4><p><strong>find</strong> </p>
-<p>按照名字查找</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">find 查找路径 -name <span class="string">"文件名"</span></span><br><span class="line">--通配符查找</span><br><span class="line">find 查找路径 -name <span class="string">"a*"</span>/<span class="string">"a?"</span> --*表示多个字符，?表示一个</span><br></pre></td></tr></table></figure>
-
-<p>按照大小查找</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">find 路径 -size +10M/+10k/-10k/10M/</span><br><span class="line">--范围</span><br><span class="line">find 路径 -size +10M -size -100M</span><br></pre></td></tr></table></figure>
-
-<p>按文件类型查找</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find 查找目录 -<span class="built_in">type</span> d/f/b/c/s/p/l</span><br></pre></td></tr></table></figure>
-
-<p><strong>grep</strong> 按文件内容查找</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grep -r <span class="string">"查找内容"</span> 查找路径</span><br></pre></td></tr></table></figure>
-
-<h4 id="1-4-安装软件"><a href="#1-4-安装软件" class="headerlink" title="1.4 安装软件"></a>1.4 安装软件</h4><p><strong>apt-get 在线安装</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get/apt install 软件名</span><br></pre></td></tr></table></figure>
-
-<p><strong>移除</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get remove 软件名</span><br></pre></td></tr></table></figure>
-
-<p><strong>更新软件列表</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get update</span><br></pre></td></tr></table></figure>
-
-<p><strong>清理所有软件安装包</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get clean</span><br></pre></td></tr></table></figure>
-
-
-
-<p><strong>sptitude 安装</strong> </p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sudo aptitude install 软件名</span><br><span class="line">sudo aptitude reinstall 软件名 --重新安装</span><br><span class="line">sudo apt-get update --更新</span><br><span class="line">sudo aptitude remove 软件名 --移除</span><br><span class="line">sudo aptitude show 软件名 --显示状态</span><br></pre></td></tr></table></figure>
-
-<p><strong>deb包安装</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo dpkg -i xxx.deb --安装</span><br><span class="line">sudo dpkg -r xxx --删除</span><br></pre></td></tr></table></figure>
-
-
+          <h3 id="1-基础bash命令"><a href="#1-基础bash命令" class="headerlink" title="1.基础bash命令"></a>1.基础bash命令</h3>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/07/22/Ubuntu%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -334,10 +256,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2020-05-24 14:24:05 / 修改时间：22:08:44" itemprop="dateCreated datePublished" datetime="2020-05-24T14:24:05+08:00">2020-05-24</time>
+              <time title="创建时间：2020-05-24 14:24:05" itemprop="dateCreated datePublished" datetime="2020-05-24T14:24:05+08:00">2020-05-24</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-07-22 17:14:55" itemprop="dateModified" datetime="2020-07-22T17:14:55+08:00">2020-07-22</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -457,13 +385,13 @@
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-count">2</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-count">2</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
